@@ -8,12 +8,14 @@
 <style type="text/css">
 body{
 	text-align: center;
+	background-image: url("https://cdn.pixabay.com/photo/2021/03/28/13/00/lists-6131213_1280.jpg");
 	
 }
+
 a{
  display:inline-block;
  text-align: center;
- border: 1px solid grey;
+ border: 1px groove grey;
  width:150px;
  height: 45px;
  line-height: 40px;
@@ -35,6 +37,7 @@ margin-top:5cm;
 height: 50vh;
 
 width: 500px;
+border: none;
 
 
 
@@ -43,12 +46,10 @@ width: 500px;
 </head>
 <body>
  <fieldset>
- <legend><h1>Index</h1> </legend>
+ <legend><h1></h1> </legend>
  <br>
  <br>
  <a href="Login.jsp">Login</a>
- <br>
- <br>
  <br>
  <a href="signup.jsp">Sign up</a>
 

@@ -10,6 +10,15 @@
 <meta charset="ISO-8859-1">
 <title>Home</title>
 <style type="text/css">
+
+body{
+	background-image: url("https://cdn.pixabay.com/photo/2017/07/13/16/16/paper-2500942_960_720.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#homepage{
+	padding: 20px;
+}
 a{
  display:inline-block;
  text-align: center;
@@ -28,21 +37,42 @@ a:hover {
 	background-color: skyblue;
 
 }
+#udetails{
+display: flex;
+}
+#image {
+	width: 30%
+}
+#uinfo{
+width: 70%
+}
 
 </style>
 </head>
 <body>
 
-<% userdetails u = (userdetails)request.getSession().getAttribute("user");%>
-<% byte[] img=u.getUserImage();
-	String image=new String(Base64.getEncoder().encode(img));
-	%>
-	<img alt="" src="data:image/jpeg;base64,<%=image%>" width="150" height="100">
+<div id="homepage">
+<div id="udetails">
+	<div id="image">
+		<% userdetails u = (userdetails)request.getSession().getAttribute("user");%>
+		<% byte[] img=u.getUserImage();
+		String image=new String(Base64.getEncoder().encode(img));%>
+		<img alt="" src="data:image/jpeg;base64,<%=image%>" width="250" height="200">
 	
-<h1>Hello <%= u.getUserName() %> </h1>
-<h1> E-mail: <%= u.getUserEmail()%> </h1>
+	</div>
+	
+	<div id="uinfo">
+		<h1>Hello <%= u.getUserName() %> </h1>
+		<h1> E-mail: <%= u.getUserEmail()%> </h1>
+	
+	</div>
+</div>
 
-
+<br>
+<br>
+<br>
 <a href="addtask.jsp">Add Task</a>
+
+</div>
 </body>
 </html>

@@ -6,11 +6,18 @@
 <meta charset="ISO-8859-1">
 <title>Add Task</title>
 <style type="text/css">
-fieldset {
-	margin-left: 10cm;
-	margin-top: 5cm;
-	margin-right: 10cm;
+body{
+background-image: url("https://cdn.pixabay.com/photo/2017/03/05/12/06/bamboo-2118470_1280.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+color: rgb(0,0,0);
 }
+fieldset {
+	
+	border: none;
+	margin-top: 1cm;
+	line-height: 80px;
+	}
 </style>
 
 </head>

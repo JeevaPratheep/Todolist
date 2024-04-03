@@ -4,12 +4,17 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>SignUP</title>
+<title>Sign UP</title>
 <style type="text/css">
+body{
+	background-image: url("https://cdn.pixabay.com/photo/2016/06/20/13/44/paper-1468883_1280.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 fieldset {
-	margin-left: 15cm;
+	margin-left: 14cm;
 	margin-top: 5cm;
-	margin-right: 15cm;
+	margin-right: 14cm;
 }
 </style>
 </head>

@@ -7,10 +7,17 @@
 <title>Login</title>
 
 <style type="text/css">
+
+body{
+background-image: url("https://cdn.pixabay.com/photo/2015/12/01/15/43/black-1072366_1280.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+color: rgb(430,230,130);
+}
 fieldset {
-	margin-left: 15cm;
+	margin-left: 14cm;
 	margin-top: 5cm;
-	margin-right: 15cm;
+	margin-right: 14cm;
 }
 </style>
 </head>
