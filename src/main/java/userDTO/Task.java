@@ -1,7 +1,10 @@
 package userDTO;
 
 public class Task {
- private int taskid;
+ public String getTaskstatus() {
+		return taskstatus;
+	}
+private int taskid;
  private String tasktitle;
  private String taskdesc;
  private String taskpriority;

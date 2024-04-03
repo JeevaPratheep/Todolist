@@ -1,3 +1,6 @@
+<%@page import="userDTO.Task"%>
+<%@page import="java.util.List"%>
+<%@page import="dao.Dao"%>
 <%@page import="java.awt.image.BaseMultiResolutionImage"%>
 <%@page import="java.io.FileOutputStream"%>
 <%@page import="java.util.Base64"%>
@@ -12,7 +15,7 @@
 <style type="text/css">
 
 body{
-	background-image: url("https://cdn.pixabay.com/photo/2017/07/13/16/16/paper-2500942_960_720.jpg");
+	background-image: url("https://cdn.pixabay.com/photo/2016/06/20/13/44/paper-1468883_1280.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -46,6 +49,15 @@ display: flex;
 #uinfo{
 width: 70%
 }
+table,tr,td,th {
+border: 1px solid black;
+border-collapse: collapse;
+
+
+}
+td {
+	width: 200px;
+}
 
 </style>
 </head>
@@ -67,11 +79,68 @@ width: 70%
 	
 	</div>
 </div>
-
 <br>
 <br>
 <br>
 <a href="addtask.jsp">Add Task</a>
+
+<div id="tasks">
+<h3>Tasks</h3>
+<br>
+ <table>
+ <tr>  
+ <th>ID</th>
+ <th>Title</th>
+ <th>Description</th>
+ <th>Priority</th>
+ <th>Due Date</th>
+ <th>Status</th>
+ </tr>
+<%List<Task> tasks=(List)request.getAttribute("tasks"); %> 
+ <%
+ int t=tasks.size();
+ if(t>0){
+ 	for(Task task:tasks){ 
+ %>
+ <tr>
+ <td>
+<%= task.getTaskid() %>
+ 
+ </td>
+ <td>
+ <%= task.getTasktitle() %>
+ 
+ </td>
+ <td>
+  <%= task.getTaskdesc() %>
+ 
+ </td>
+ <td>
+<%= task.getTaskpriority() %>
+ 
+ </td>
+ <td>
+ <%= task.getTaskduedate() %>
+ 
+ </td>
+ <td>
+ <%= task.getTaskstatus() %>
+ 
+ </td>
+ </tr>
+ <%
+ 
+ 	}
+ } 
+ else{
+ %>
+ 
+ <h4>Empty</h4>
+
+ <%} %>
+ 
+ </table>	
+</div>
 
 </div>
 </body>

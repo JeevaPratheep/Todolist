@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -36,7 +37,10 @@ public class AddTask extends HttpServlet{
 			
 			if(res>0) {
 				
-				resp.getWriter().print("Task added");
+				List<Task> tasks=dao.gettasks(u.getUserID());
+				req.getSession().setAttribute("user", u);
+				req.setAttribute("tasks", tasks);
+				req.getRequestDispatcher("Home.jsp").include(req, resp);
 			}
 			else {
 				req.getRequestDispatcher("failed");

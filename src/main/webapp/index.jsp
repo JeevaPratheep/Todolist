@@ -18,11 +18,12 @@ a{
  border: 1px groove grey;
  width:150px;
  height: 45px;
- line-height: 40px;
+ line-height: 50px;
  color: white;
  background-color: red;
  text-decoration: none;
  border-radius:25px; 
+ 
  
 }
 a:hover {
@@ -35,7 +36,7 @@ margin-left:12cm;
 margin-right:12cm;
 margin-top:5cm;
 height: 50vh;
-
+line-height:50px;
 width: 500px;
 border: none;
 
@@ -50,6 +51,7 @@ border: none;
  <br>
  <br>
  <a href="Login.jsp">Login</a>
+ <br>
  <br>
  <a href="signup.jsp">Sign up</a>
 
