@@ -15,9 +15,10 @@
 <style type="text/css">
 
 body{
-	background-image: url("https://cdn.pixabay.com/photo/2016/06/20/13/44/paper-1468883_1280.jpg");
+	background-image: url("https://cdn.pixabay.com/photo/2022/06/20/14/20/space-7273891_1280.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
+	color: white;
 }
 #homepage{
 	padding: 20px;
@@ -95,6 +96,7 @@ td {
  <th>Priority</th>
  <th>Due Date</th>
  <th>Status</th>
+ <th>Delete</th>
  </tr>
 <%List<Task> tasks=(List)request.getAttribute("tasks"); %> 
  <%
@@ -115,7 +117,7 @@ td {
   <%= task.getTaskdesc() %>
  
  </td>
- <td>
+ <td> ,
 <%= task.getTaskpriority() %>
  
  </td>
@@ -127,6 +129,8 @@ td {
  <%= task.getTaskstatus() %>
  
  </td>
+ 
+ <td><a href="delete?taskid=<%= task.getTaskid() %>" >Delete</a></td>
  </tr>
  <%
  
