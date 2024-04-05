@@ -90,7 +90,7 @@ td {
 <br>
  <table>
  <tr>  
- <th>ID</th>
+ <th>#</th>
  <th>Title</th>
  <th>Description</th>
  <th>Priority</th>
@@ -100,13 +100,14 @@ td {
  </tr>
 <%List<Task> tasks=(List)request.getAttribute("tasks"); %> 
  <%
+ int n=1;
  int t=tasks.size();
  if(t>0){
  	for(Task task:tasks){ 
  %>
  <tr>
  <td>
-<%= task.getTaskid() %>
+<%= n %>
  
  </td>
  <td>
@@ -131,9 +132,11 @@ td {
  </td>
  
  <td><a href="delete?taskid=<%= task.getTaskid() %>" >Delete</a></td>
+ 
+  <td><a href="edit?taskid=<%= task.getTaskid() %>" >Edit</a></td>
  </tr>
  <%
- 
+ n++;
  	}
  } 
  else{

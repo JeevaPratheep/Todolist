@@ -2,7 +2,6 @@ package controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,23 +12,25 @@ import javax.servlet.http.HttpServletResponse;
 import dao.Dao;
 import userDTO.Task;
 import userDTO.userdetails;
-
-@WebServlet("/delete")
-public class Deletetask extends HttpServlet{
+@WebServlet("/edit")
+public class Edittask extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		int id=Integer.parseInt(req.getParameter("taskid"));
-		Dao dao=new Dao();
+		int taskid =Integer.parseInt(req.getParameter("taskid"));
+		Dao dao= new Dao();
 		userdetails u= (userdetails)req.getSession().getAttribute("user");
 		try {
-			dao.deletetask(id);
-			List<Task> tasks=dao.gettasks(u.getUserID());
+			Task task=dao.editTask(taskid, u.getUserID());
 			req.getSession().setAttribute("user", u);
-			req.setAttribute("tasks", tasks);
-			req.getRequestDispatcher("Home.jsp").include(req, resp);
+			req.setAttribute("task", task);
+			req.getRequestDispatcher("edit.jsp").include(req, resp);
 			
 		} catch (ClassNotFoundException | SQLException e) {
+			
 			e.printStackTrace();
 		}
+		
+		
 	}
+
 }
