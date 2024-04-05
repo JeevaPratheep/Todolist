@@ -32,25 +32,28 @@ fieldset {
 		<%Task task=(Task)request.getAttribute("task");%>
 		<tr>
 		<td>
-		Task-ID :
+	
 		</td>
-		<td><input type="text" name="taskid" required value=<%=task.getTaskid() %> readonly="readonly"> </td>
+		<td><input type="text" name="taskid" required value=<%=task.getTaskid() %> readonly="readonly" hidden="hidden"> </td>
 		</tr>
 		<tr>
 		<td>
 		Task Title :
 		</td>
-		<td><input type="text" name="tasktitle" required value=<%=task.getTasktitle() %>></td>
+		<td><input type="text" name="tasktitle" required value=<%=task.getTasktitle()%>></td>
 		</tr>
 		<tr>
 		<td>
 		Task Description :
 		</td>
-		<td><input type="text" name="taskdesc" required value=<%=task.getTaskdesc() %>></td>
+		<td><input type="text" name="taskdesc" required value=<%= task.getTaskdesc()%>></td>
 		</tr>
 		<tr>
 		<td>
 		Task Priority :
+		</td>
+		<td>
+		<input type="text" name="oldtaskpriority" value="<%= task.getTaskpriority()%>">
 		</td>
 		<td><input type="radio" name="taskpriority" value="low">Low priority
 			<input type="radio" name="taskpriority" value="medium">Medium priority

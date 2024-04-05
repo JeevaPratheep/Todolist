@@ -28,12 +28,7 @@ fieldset {
 		<h1>Add task</h1>
 	<form action="addtask" method="post">
 	
-		<tr>
-		<td>
-		Task-ID :
-		</td>
-		<td><input type="text" name="taskid" required></td>
-		</tr>
+		
 		<tr>
 		<td>
 		Task Title :

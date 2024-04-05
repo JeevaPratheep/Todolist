@@ -20,13 +20,17 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 	int taskid= Integer.parseInt(req.getParameter("taskid"));
 	String tasktitle =req.getParameter("tasktitle");
 	String taskdesc =req.getParameter("taskdesc");
+	String oldpriority = req.getParameter("oldtaskpriority");
 	String taskpriority =req.getParameter("taskpriority");
 	String taskdate =req.getParameter("taskdate");
 	String taskstatus =req.getParameter("taskstatus");
 	userdetails u= (userdetails)req.getSession().getAttribute("user");
 	
 	int userid=u.getUserID();
-	Task task= new Task(taskid, tasktitle, taskdesc, taskpriority, taskdate, taskstatus, userid);
+	Task task= new Task(taskid, tasktitle, taskdesc, oldpriority, taskdate, taskstatus, userid);
+	if(taskpriority!=null) {
+		task.setTaskpriority(taskpriority);
+	}
 	
 	Dao dao= new Dao();
 	

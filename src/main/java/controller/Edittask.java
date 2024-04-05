@@ -20,7 +20,7 @@ public class Edittask extends HttpServlet{
 		Dao dao= new Dao();
 		userdetails u= (userdetails)req.getSession().getAttribute("user");
 		try {
-			Task task=dao.editTask(taskid, u.getUserID());
+			Task task=dao.editTask(taskid);
 			req.getSession().setAttribute("user", u);
 			req.setAttribute("task", task);
 			req.getRequestDispatcher("edit.jsp").include(req, resp);

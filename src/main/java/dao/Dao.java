@@ -123,14 +123,15 @@ public class Dao {
 			return 1;
 		}
 	}
-	public Task editTask(int taskid,int userid) throws ClassNotFoundException, SQLException {
+	public Task editTask(int taskid) throws ClassNotFoundException, SQLException {
 		Connection con = getConnection();
 		PreparedStatement pst=con.prepareStatement("select * from task where taskid = ?");
 		pst.setInt(1, taskid);
 		ResultSet rs= pst.executeQuery();
 		
 		if(rs.next()) {
-			Task task=new Task(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), userid);
+			Task task=new Task(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6),rs.getInt(7));
+			
 			return task;
 		}
 		else

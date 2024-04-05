@@ -19,20 +19,21 @@ public class AddTask extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
-		int taskid= Integer.parseInt(req.getParameter("taskid"));
+//		int taskid= Integer.parseInt(req.getParameter("taskid"));
 		String tasktitle =req.getParameter("tasktitle");
 		String taskdesc =req.getParameter("taskdesc");
 		String taskpriority =req.getParameter("taskpriority");
 		String taskdate =req.getParameter("taskdate");
 		userdetails u= (userdetails)req.getSession().getAttribute("user");
 		
-		int userid=u.getUserID();
-		Task task= new Task(taskid, tasktitle, taskdesc, taskpriority, taskdate, "pending",userid);
 		
-		Dao dao= new Dao();
 		
 		try {
+			int userid=u.getUserID();
+			Dao dao= new Dao();
+			Task task= new Task(dao.getTaskid(), tasktitle, taskdesc, taskpriority, taskdate, "pending",userid);
 			
+		
 			int res=dao.createtask(task);
 			
 			if(res>0) {
